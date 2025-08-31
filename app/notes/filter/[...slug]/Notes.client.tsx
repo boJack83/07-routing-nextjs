@@ -20,6 +20,8 @@ type NotesClientProps = {
 
 export default function NotesClient({tag}: NotesClientProps) {
 
+  const perPage = 12;
+
   const [search, setSearch] = useState(""); // стан для пошуку
   const [page, setPage] = useState(1); // стан для пагінації
   const [isModalOpen, setIsModalOpen] = useState(false); // стан модального вікна
@@ -31,8 +33,6 @@ export default function NotesClient({tag}: NotesClientProps) {
     placeholderData: keepPreviousData, // без блимання
     refetchOnMount: false,
   })
-
-  const perPage = 12;
 
 const handleSearchChange = (value: string) => {
   setSearch(value);
